@@ -1,0 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bmi.calculator;
+/**
+ *
+ * @author keylaestrada
+ */
+import javax.swing.JOptionPane;
+public class BMICalculator {
+
+    public static void main(String[] args) {
+        double weight;          // User's Weight
+        double height;          // User's Height
+        double BMI;             // Calculated BMI
+        String message;
+
+        // Get the user's weight
+        weight = Double.parseDouble(JOptionPane.showInputDialog("Enter your weight:"));
+
+        // Get the user's height
+        height = Double.parseDouble(JOptionPane.showInputDialog("What is your height?"));
+
+        // Calculate the BMI with the given data
+        BMI = (weight * 703) / (height * height);
+
+        // Determine whether the user is underweight, overweight, or at a healthy weight
+        if (BMI < 18.5)
+            message = "Underweight";
+        else if (BMI > 25)
+            message = "Overweight";
+        else
+            message = "Healthy weight";
+
+        // Display the message and exit
+        JOptionPane.showMessageDialog(null, message);
+        System.exit(0);
+    }
+}
